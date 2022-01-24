@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmLogin
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class frmLogin
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmLogin))
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
@@ -38,7 +38,6 @@ Partial Class frmLogin
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.lblStatus = New System.Windows.Forms.Label()
         Me.lblVerified = New System.Windows.Forms.Label()
-        Me.lblFullname = New System.Windows.Forms.Label()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -52,6 +51,7 @@ Partial Class frmLogin
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(158, 28)
         Me.ComboBox1.TabIndex = 34
+        Me.ComboBox1.TabStop = False
         '
         'txtPassword
         '
@@ -207,22 +207,11 @@ Partial Class frmLogin
         Me.lblVerified.TabIndex = 40
         Me.lblVerified.Text = "Ver"
         '
-        'lblFullname
-        '
-        Me.lblFullname.AutoSize = True
-        Me.lblFullname.Font = New System.Drawing.Font("MS Reference Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblFullname.Location = New System.Drawing.Point(580, 254)
-        Me.lblFullname.Name = "lblFullname"
-        Me.lblFullname.Size = New System.Drawing.Size(85, 20)
-        Me.lblFullname.TabIndex = 42
-        Me.lblFullname.Text = "FullName"
-        '
         'frmLogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(504, 450)
-        Me.Controls.Add(Me.lblFullname)
+        Me.ClientSize = New System.Drawing.Size(547, 450)
         Me.Controls.Add(Me.lblStatus)
         Me.Controls.Add(Me.lblVerified)
         Me.Controls.Add(Me.PictureBox2)
@@ -258,5 +247,4 @@ Partial Class frmLogin
     Friend WithEvents Panel1 As Panel
     Friend WithEvents lblStatus As Label
     Friend WithEvents lblVerified As Label
-    Friend WithEvents lblFullname As Label
 End Class

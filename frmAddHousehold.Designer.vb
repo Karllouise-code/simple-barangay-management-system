@@ -94,6 +94,7 @@ Partial Class frmAddHousehold
         Me.txtRegion.ReadOnly = True
         Me.txtRegion.Size = New System.Drawing.Size(212, 21)
         Me.txtRegion.TabIndex = 156
+        Me.txtRegion.TabStop = False
         '
         'lblDate
         '
@@ -184,6 +185,7 @@ Partial Class frmAddHousehold
         Me.txtProvince.ReadOnly = True
         Me.txtProvince.Size = New System.Drawing.Size(212, 21)
         Me.txtProvince.TabIndex = 160
+        Me.txtProvince.TabStop = False
         '
         'Label4
         '
@@ -203,6 +205,7 @@ Partial Class frmAddHousehold
         Me.txtCityMun.ReadOnly = True
         Me.txtCityMun.Size = New System.Drawing.Size(212, 21)
         Me.txtCityMun.TabIndex = 162
+        Me.txtCityMun.TabStop = False
         '
         'Label5
         '
@@ -222,6 +225,7 @@ Partial Class frmAddHousehold
         Me.txtBrgy.ReadOnly = True
         Me.txtBrgy.Size = New System.Drawing.Size(212, 21)
         Me.txtBrgy.TabIndex = 164
+        Me.txtBrgy.TabStop = False
         '
         'Label6
         '

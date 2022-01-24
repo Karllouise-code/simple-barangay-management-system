@@ -27,6 +27,7 @@ Partial Class frmDashboard
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnBack = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.lblFullname = New System.Windows.Forms.Label()
         Me.txtPurName = New System.Windows.Forms.TextBox()
         Me.txtPurID = New System.Windows.Forms.TextBox()
@@ -49,12 +50,12 @@ Partial Class frmDashboard
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtSearch2 = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.btnLoad2 = New System.Windows.Forms.Button()
         Me.btnDelete2 = New System.Windows.Forms.Button()
         Me.btnAdd2 = New System.Windows.Forms.Button()
-        Me.btnUpdate2 = New System.Windows.Forms.Button()
+        Me.btnView = New System.Windows.Forms.Button()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -70,12 +71,16 @@ Partial Class frmDashboard
         Me.Column14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column16 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.lblTime = New System.Windows.Forms.Label()
+        Me.lblHouseID = New System.Windows.Forms.Label()
+        Me.txtHouseID = New System.Windows.Forms.TextBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -91,7 +96,7 @@ Partial Class frmDashboard
         Me.PictureBox1.Location = New System.Drawing.Point(17, 13)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(133, 131)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 26
         Me.PictureBox1.TabStop = False
         '
@@ -112,6 +117,7 @@ Partial Class frmDashboard
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.MediumTurquoise
+        Me.Panel1.Controls.Add(Me.PictureBox2)
         Me.Panel1.Controls.Add(Me.lblFullname)
         Me.Panel1.Controls.Add(Me.btnBack)
         Me.Panel1.Controls.Add(Me.PictureBox1)
@@ -120,6 +126,16 @@ Partial Class frmDashboard
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(170, 494)
         Me.Panel1.TabIndex = 27
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.Location = New System.Drawing.Point(21, 249)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(122, 99)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox2.TabIndex = 153
+        Me.PictureBox2.TabStop = False
         '
         'lblFullname
         '
@@ -135,6 +151,7 @@ Partial Class frmDashboard
         '
         Me.txtPurName.Location = New System.Drawing.Point(429, 465)
         Me.txtPurName.Name = "txtPurName"
+        Me.txtPurName.ReadOnly = True
         Me.txtPurName.Size = New System.Drawing.Size(100, 20)
         Me.txtPurName.TabIndex = 153
         '
@@ -142,6 +159,7 @@ Partial Class frmDashboard
         '
         Me.txtPurID.Location = New System.Drawing.Point(239, 465)
         Me.txtPurID.Name = "txtPurID"
+        Me.txtPurID.ReadOnly = True
         Me.txtPurID.Size = New System.Drawing.Size(100, 20)
         Me.txtPurID.TabIndex = 152
         '
@@ -159,6 +177,7 @@ Partial Class frmDashboard
         '
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
+        Me.TabControl1.ImageList = Me.ImageList1
         Me.TabControl1.Location = New System.Drawing.Point(176, 12)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
@@ -177,10 +196,11 @@ Partial Class frmDashboard
         Me.TabPage1.Controls.Add(Me.btnUpdate)
         Me.TabPage1.Controls.Add(Me.btnAdd)
         Me.TabPage1.Controls.Add(Me.Panel2)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage1.ImageKey = "houses.png"
+        Me.TabPage1.Location = New System.Drawing.Point(4, 23)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(650, 420)
+        Me.TabPage1.Size = New System.Drawing.Size(650, 419)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Purok"
         '
@@ -223,7 +243,7 @@ Partial Class frmDashboard
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2})
         Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.DataGridView1.Location = New System.Drawing.Point(3, 160)
+        Me.DataGridView1.Location = New System.Drawing.Point(3, 159)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.Size = New System.Drawing.Size(644, 257)
@@ -320,17 +340,18 @@ Partial Class frmDashboard
         Me.TabPage2.BackColor = System.Drawing.Color.DarkRed
         Me.TabPage2.Controls.Add(Me.Label4)
         Me.TabPage2.Controls.Add(Me.Panel3)
-        Me.TabPage2.Controls.Add(Me.TextBox1)
+        Me.TabPage2.Controls.Add(Me.txtSearch2)
         Me.TabPage2.Controls.Add(Me.Label3)
         Me.TabPage2.Controls.Add(Me.btnLoad2)
         Me.TabPage2.Controls.Add(Me.btnDelete2)
         Me.TabPage2.Controls.Add(Me.btnAdd2)
-        Me.TabPage2.Controls.Add(Me.btnUpdate2)
+        Me.TabPage2.Controls.Add(Me.btnView)
         Me.TabPage2.Controls.Add(Me.DataGridView2)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage2.ImageKey = "family.png"
+        Me.TabPage2.Location = New System.Drawing.Point(4, 23)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(650, 420)
+        Me.TabPage2.Size = New System.Drawing.Size(650, 419)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Household"
         '
@@ -366,13 +387,13 @@ Partial Class frmDashboard
         Me.Label6.Text = "BARANGAY TRIMEX BIÑAN CITY, LAGUNA"
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'TextBox1
+        'txtSearch2
         '
-        Me.TextBox1.Font = New System.Drawing.Font("MS Reference Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(141, 128)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(150, 23)
-        Me.TextBox1.TabIndex = 153
+        Me.txtSearch2.Font = New System.Drawing.Font("MS Reference Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSearch2.Location = New System.Drawing.Point(141, 128)
+        Me.txtSearch2.Name = "txtSearch2"
+        Me.txtSearch2.Size = New System.Drawing.Size(150, 23)
+        Me.txtSearch2.TabIndex = 153
         '
         'Label3
         '
@@ -425,18 +446,18 @@ Partial Class frmDashboard
         Me.btnAdd2.Text = "&Add"
         Me.btnAdd2.UseVisualStyleBackColor = False
         '
-        'btnUpdate2
+        'btnView
         '
-        Me.btnUpdate2.BackColor = System.Drawing.Color.BlueViolet
-        Me.btnUpdate2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnUpdate2.Font = New System.Drawing.Font("MS Reference Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnUpdate2.ForeColor = System.Drawing.SystemColors.Control
-        Me.btnUpdate2.Location = New System.Drawing.Point(414, 114)
-        Me.btnUpdate2.Name = "btnUpdate2"
-        Me.btnUpdate2.Size = New System.Drawing.Size(111, 45)
-        Me.btnUpdate2.TabIndex = 152
-        Me.btnUpdate2.Text = "&View"
-        Me.btnUpdate2.UseVisualStyleBackColor = False
+        Me.btnView.BackColor = System.Drawing.Color.BlueViolet
+        Me.btnView.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnView.Font = New System.Drawing.Font("MS Reference Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnView.ForeColor = System.Drawing.SystemColors.Control
+        Me.btnView.Location = New System.Drawing.Point(414, 114)
+        Me.btnView.Name = "btnView"
+        Me.btnView.Size = New System.Drawing.Size(111, 45)
+        Me.btnView.TabIndex = 152
+        Me.btnView.Text = "&View"
+        Me.btnView.UseVisualStyleBackColor = False
         '
         'DataGridView2
         '
@@ -445,7 +466,7 @@ Partial Class frmDashboard
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7, Me.Column8, Me.Column9, Me.Column10, Me.Column11, Me.Column12, Me.Column13, Me.Column14, Me.Column15, Me.Column16})
         Me.DataGridView2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.DataGridView2.Location = New System.Drawing.Point(3, 161)
+        Me.DataGridView2.Location = New System.Drawing.Point(3, 160)
         Me.DataGridView2.Name = "DataGridView2"
         Me.DataGridView2.ReadOnly = True
         Me.DataGridView2.Size = New System.Drawing.Size(644, 256)
@@ -562,6 +583,13 @@ Partial Class frmDashboard
         Me.Column16.ReadOnly = True
         Me.Column16.Width = 87
         '
+        'ImageList1
+        '
+        Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
+        Me.ImageList1.Images.SetKeyName(0, "houses.png")
+        Me.ImageList1.Images.SetKeyName(1, "family.png")
+        '
         'Label7
         '
         Me.Label7.AutoSize = True
@@ -595,11 +623,31 @@ Partial Class frmDashboard
         Me.lblTime.TabIndex = 149
         Me.lblTime.Text = "Time"
         '
+        'lblHouseID
+        '
+        Me.lblHouseID.AutoSize = True
+        Me.lblHouseID.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblHouseID.Location = New System.Drawing.Point(177, 465)
+        Me.lblHouseID.Name = "lblHouseID"
+        Me.lblHouseID.Size = New System.Drawing.Size(93, 16)
+        Me.lblHouseID.TabIndex = 156
+        Me.lblHouseID.Text = "Household ID:"
+        '
+        'txtHouseID
+        '
+        Me.txtHouseID.Location = New System.Drawing.Point(270, 464)
+        Me.txtHouseID.Name = "txtHouseID"
+        Me.txtHouseID.ReadOnly = True
+        Me.txtHouseID.Size = New System.Drawing.Size(100, 20)
+        Me.txtHouseID.TabIndex = 155
+        '
         'frmDashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(835, 494)
+        Me.Controls.Add(Me.lblHouseID)
+        Me.Controls.Add(Me.txtHouseID)
         Me.Controls.Add(Me.lblTime)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.lblDate)
@@ -613,6 +661,7 @@ Partial Class frmDashboard
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
@@ -647,7 +696,7 @@ Partial Class frmDashboard
     Friend WithEvents btnLoad2 As Button
     Friend WithEvents btnDelete2 As Button
     Friend WithEvents btnAdd2 As Button
-    Friend WithEvents btnUpdate2 As Button
+    Friend WithEvents btnView As Button
     Friend WithEvents Label3 As Label
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
@@ -672,11 +721,15 @@ Partial Class frmDashboard
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Label6 As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtSearch2 As TextBox
     Friend WithEvents txtPurName As TextBox
     Friend WithEvents txtPurID As TextBox
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents Timer1 As Timer
     Friend WithEvents lblTime As Label
+    Friend WithEvents lblHouseID As Label
+    Friend WithEvents txtHouseID As TextBox
+    Friend WithEvents ImageList1 As ImageList
+    Friend WithEvents PictureBox2 As PictureBox
 End Class

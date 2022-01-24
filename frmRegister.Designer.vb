@@ -156,6 +156,7 @@ Partial Class frmRegister
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(158, 28)
         Me.ComboBox1.TabIndex = 26
+        Me.ComboBox1.TabStop = False
         '
         'txtConfirmPassword
         '

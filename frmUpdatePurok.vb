@@ -22,11 +22,6 @@ Public Class frmUpdatePurok
         con.Close()
     End Sub
 
-    'BUTTON BACK
-    Private Sub btnBac_Click(sender As Object, e As EventArgs) Handles btnBac.Click
-        Me.Hide()
-    End Sub
-
     'LOADER
     Private Sub frmUpdatePurok_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call purokID()
@@ -41,26 +36,16 @@ Public Class frmUpdatePurok
             If txtPurok.Text = "" Then
                 MessageBox.Show("Please input empty fields!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
-                'CHECK IF CUSTOMERID IS EXIST ON DATABASE
-                Using cmd As New OleDbCommand("SELECT COUNT(*) FROM tblPurok WHERE [Purok_ID] = @Purok_ID", con)
-                    cmd.Parameters.AddWithValue("@Purok_ID", OleDbType.VarChar).Value = frmDashboard.txtPurID.Text.Trim
-                    Dim count = Convert.ToInt32(cmd.ExecuteScalar())
-                    If count > 0 Then
-                        query.Connection = con
-                        query.CommandText = "UPDATE tblPurok SET [Purok_Name] = '" & txtPurok.Text & "' WHERE [Purok_ID] = " & frmDashboard.txtPurID.Text & ""
-                        query.ExecuteNonQuery()
-                        MessageBox.Show("Update Successfully!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                        Call frmDashboard.loadPurok()
-                        txtPurok.Clear()
-                        frmDashboard.txtPurID.Clear()
-                        frmDashboard.txtPurName.Clear()
-                        con.Close()
-                        Me.Hide()
-                        Exit Sub
-                    Else
-                        MessageBox.Show("Purok ID is not Registered!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                    End If
-                End Using
+                query.Connection = con
+                query.CommandText = "UPDATE tblPurok SET [Purok_Name] = '" & txtPurok.Text & "' WHERE [Purok_ID] = " & frmDashboard.txtPurID.Text & ""
+                query.ExecuteNonQuery()
+                MessageBox.Show("Update Successfully!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Call frmDashboard.loadPurok()
+                txtPurok.Clear()
+                frmDashboard.txtPurID.Clear()
+                frmDashboard.txtPurName.Clear()
+                con.Close()
+                Me.Hide()
             End If
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
@@ -69,5 +54,9 @@ Public Class frmUpdatePurok
         Call frmDashboard.loadPurok()
     End Sub
 
+    'BUTTON BACK
+    Private Sub btnBac_Click(sender As Object, e As EventArgs) Handles btnBac.Click
+        Me.Close()
+    End Sub
 
 End Class

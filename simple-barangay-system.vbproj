@@ -117,6 +117,12 @@
       <DependentUpon>frmStart.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmUpdateHousehold.Designer.vb">
+      <DependentUpon>frmUpdateHousehold.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmUpdateHousehold.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmUpdatePurok.Designer.vb">
       <DependentUpon>frmUpdatePurok.vb</DependentUpon>
     </Compile>
@@ -161,6 +167,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmStart.resx">
       <DependentUpon>frmStart.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUpdateHousehold.resx">
+      <DependentUpon>frmUpdateHousehold.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUpdatePurok.resx">
       <DependentUpon>frmUpdatePurok.vb</DependentUpon>

@@ -6,7 +6,6 @@ Public Class frmAddPurok
         If con.State = ConnectionState.Closed Then
             OpenCon()
         End If
-
         If txtPurok.Text = "" Then
             MessageBox.Show("Please input empty fields!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else

@@ -22,45 +22,27 @@ Public Class frmLogin
     End Sub
 
     'FULLNAME OF EMPLOYEE FUNCTION
-    Private Sub employeeName(Optional ByVal q As String = "")
-        If con.State = ConnectionState.Closed Then
-            OpenCon()
-        End If
-        Try
-            Dim strsql As String
-            strsql = "SELECT * FROM tblEmployee WHERE [Username] = '" & txtUsername.Text & "'"
-            Dim cmd As New OleDbCommand(strsql, con)
-            Dim myReader As OleDbDataReader
-            myReader = cmd.ExecuteReader
-            myReader.Read()
-            lblFullname.Text = myReader("Fullname")
-            con.Close()
-        Catch ex As Exception
-            MessageBox.Show(ex.ToString)
-        End Try
-        con.Close()
-    End Sub
-
-    'FULLNAME LOADER
-    Private Sub nameLabel(Optional ByVal q As String = "")
-        If con.State = ConnectionState.Closed Then
-            OpenCon()
-        End If
-        Try
-            Dim strsql As String
-            strsql = "SELECT * FROM tblEmployee WHERE [Username] = '" & txtUsername.Text & "'"
-            Dim cmd As New OleDbCommand(strsql, con)
-            Dim myReader As OleDbDataReader
-            myReader = cmd.ExecuteReader
-            myReader.Read()
-            lblFullname.Text = myReader("Fullname")
-
-        Catch ex As Exception
-            MessageBox.Show(ex.ToString)
-        End Try
-    End Sub
+    'Private Sub employeeName(Optional ByVal q As String = "")
+    '    If con.State = ConnectionState.Closed Then
+    '        OpenCon()
+    '    End If
+    '    Try
+    '        Dim strsql As String
+    '        strsql = "SELECT * FROM tblEmployee WHERE [Username] = '" & txtUsername.Text & "'"
+    '        Dim cmd As New OleDbCommand(strsql, con)
+    '        Dim myReader As OleDbDataReader
+    '        myReader = cmd.ExecuteReader
+    '        myReader.Read()
+    '        lblFullname.Text = myReader("Fullname")
+    '        con.Close()
+    '    Catch ex As Exception
+    '        MessageBox.Show(ex.ToString)
+    '    End Try
+    '    con.Close()
+    'End Sub
 
     'BUTTON LOGIN
+
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
         If con.State = ConnectionState.Closed Then
             OpenCon()
@@ -97,13 +79,11 @@ Public Class frmLogin
                 Dim loginCount = Convert.ToInt32(login.ExecuteScalar())
                 If loginCount > 0 Then
                     Call verifyLabel()
-                    Call nameLabel()
 
                     If lblVerified.Text = "UNVERIFIED" Then
                         MessageBox.Show("Unverified Account Contact Admin:(", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     Else
                         Me.Hide()
-                        Call employeeName()
                         MessageBox.Show("Login Successfully!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         frmDashboard.Show()
                         txtUsername.Clear()
@@ -132,5 +112,6 @@ Public Class frmLogin
         Me.Hide()
         frmRegister.Show()
     End Sub
+
 
 End Class
